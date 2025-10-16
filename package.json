@@ -4,14 +4,16 @@
 	"private": true,
 	"scripts": {
 		"dev": "bun --hot run src/index.ts --watch",
-		"start": "bun run src/index.ts ",
+		"dev:start": "bun run src/index.ts ",
 		"check": "biome check .",
 		"check:unsafe": "biome check --write --unsafe .",
 		"check:write": "biome check --write .",
 		"db:generate": "NODE_ENV=development drizzle-kit generate",
 		"db:migrate": "NODE_ENV=development drizzle-kit migrate",
 		"db:push": "NODE_ENV=development drizzle-kit push",
-		"db:studio": "NODE_ENV=development drizzle-kit studio"
+		"db:studio": "NODE_ENV=development drizzle-kit studio",
+		"code:build": "bun build ./src/index.ts --outdir ./out --target=bun --sourcemap",
+		"start": "NODE_ENV=production bun out/index.js"
 	},
 	"dependencies": {
 		"chanfana": "^2.8.3",
