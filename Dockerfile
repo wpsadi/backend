@@ -38,7 +38,7 @@ FROM base AS release
 WORKDIR /app
 
 # Copy built code and production deps
-COPY --from=builder /app/output /app/output
+COPY --from=builder /app/out /app/out
 COPY --from=deps /app/node_modules /app/node_modules
 COPY package.json /app/
 
