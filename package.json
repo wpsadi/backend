@@ -12,8 +12,8 @@
 		"db:migrate": "NODE_ENV=development drizzle-kit migrate",
 		"db:push": "NODE_ENV=development drizzle-kit push",
 		"db:studio": "NODE_ENV=development drizzle-kit studio",
-		"code:build": "bun build ./src/index.ts --outdir ./out --target=bun --sourcemap",
-		"start": "NODE_ENV=production bun out/index.js"
+		"code:build": "bun build ./src/index.ts --outdir ./build --target=bun --sourcemap",
+		"start": "NODE_ENV=production bun build/index.js"
 	},
 	"dependencies": {
 		"chanfana": "^2.8.3",

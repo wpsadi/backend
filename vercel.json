@@ -1,12 +1,19 @@
 {
-    "rewrites": [
-        {
-            "source": "/(.*)",
-            "destination": "/"
-        }
-    ],
-    "$schema": "https://openapi.vercel.sh/vercel.json",
-    "buildCommand": "bun install && bun code:build",
-    "installCommand": "bun install",
-    "outputDirectory": "out"
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "bun db:generate:prod && bun code:build",
+  "devCommand": "bun dev:start",
+  "installCommand": "bun install",
+  "outputDirectory": "build",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ],
+  "functions": {
+    "build/index.js": {
+      "memory": 1024,
+      "maxDuration": 60
+    }
+  }
 }
