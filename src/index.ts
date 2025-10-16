@@ -14,7 +14,11 @@ const openapi = fromHono(app, {
 openapi.use(
 	"*",
 	cors({
-		origin: ["http://localhost:3000", Bun.env.FRONTEND_URL],
+		origin: [
+			"http://localhost:3000",
+			"http://localhost:5173",
+			Bun.env.FRONTEND_URL,
+		],
 		allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
 		// allowHeaders: ["Content-Type", "Authorization"],
 	}),

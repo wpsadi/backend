@@ -7,7 +7,7 @@ import {
 	varchar,
 } from "drizzle-orm/pg-core";
 
-export const clubEnum = pgEnum("club_enum", ["sdc", "gdg"]);
+export const clubEnum = pgEnum("club_enum", ["sdc", "gdg", "both"]); // ✅ added 'both' option
 
 export const submissionsTable = pgTable("SDCxGDG_submission", {
 	id: integer().primaryKey().generatedAlwaysAsIdentity(),

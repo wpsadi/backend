@@ -1,0 +1,1 @@
+ALTER TYPE "public"."club_enum" ADD VALUE 'both';

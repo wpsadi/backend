@@ -50,8 +50,8 @@ const bodySchema = z.object(
 				(url) => url.includes("linkedin.com"),
 				"Must be a valid LinkedIn profile link",
 			),
-		club: z.enum(["sdc", "gdg"], {
-			error: "Club must be either 'sdc' or 'gdg'",
+		club: z.enum(["sdc", "gdg", "both"], {
+			error: "Club must be either 'sdc' or 'gdg' or 'both'",
 		}),
 		reason: z
 			.string({
