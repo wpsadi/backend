@@ -17,6 +17,7 @@ openapi.use(
 		origin: [
 			"http://localhost:3000",
 			"http://localhost:5173",
+			"https://sdc.ggsipu.ac.in",
 			Bun.env.FRONTEND_URL,
 		],
 		allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
