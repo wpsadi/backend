@@ -3,18 +3,10 @@
     "buildCommand": "bun run code:build",
     "devCommand": "bun run dev",
     "installCommand": "bun install",
-    "framework": null,
     "rewrites": [
         {
             "source": "/(.*)",
             "destination": "/api"
         }
-    ],
-    "functions": {
-        "api/index.js": {
-            "runtime": "bun@1.3.0",
-            "memory": 2048,
-            "maxDuration": 60
-        }
-    }
+    ]
 }
