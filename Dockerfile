@@ -32,8 +32,8 @@ COPY --from=codebase /app/ /app/
 
 # This stage requires presence of DATABASE URL env var for Prisma otherwise error will be there`
 # ENV DATABASE_URL="mongodb+srv://admin:password@prod.atlas.mongodb.net/ecommerce"
-RUN bun db:generate
-RUN bun code:build
+RUN bun run db:generate
+RUN bun run code:build
 # /app/build/server.js is the single output file
 
 # [optional] tests & build

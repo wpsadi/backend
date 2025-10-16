@@ -2,6 +2,7 @@ import { fromHono } from "chanfana";
 import { type Env, Hono } from "hono";
 import { cors } from "hono/cors";
 import { submitSDCForm } from "./endpoints/sdc-contact-form";
+import { getTeam } from "./endpoints/team";
 
 // Start a Hono app
 const app = new Hono<{ Bindings: Env }>();
@@ -13,7 +14,7 @@ const openapi = fromHono(app, {
 openapi.use(
 	"*",
 	cors({
-		origin: ["http://localhost:3000",Bun.env.FRONTEND_URL],
+		origin: ["http://localhost:3000", Bun.env.FRONTEND_URL],
 		allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
 		// allowHeaders: ["Content-Type", "Authorization"],
 	}),
@@ -24,6 +25,6 @@ openapi.use(
 // You may also register routes for non OpenAPI directly on Hono
 app.get("/", (c) => c.text("Hello"));
 app.post("/join-sdc", submitSDCForm);
-
+app.get("/team", getTeam);
 // Export the Hono app
 export default app;
