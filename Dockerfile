@@ -41,8 +41,6 @@ WORKDIR /app
 # Copy built code and production deps
 COPY --from=builder /app/build /app/build
 COPY --from=deps /app/node_modules /app/node_modules
-COPY --from=builder /app/node_modules/.prisma /app/node_modules/.prisma
-COPY --from=builder /app/generated /app/generated
 COPY package.json /app/
 
 
